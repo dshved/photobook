@@ -1,0 +1,58 @@
+.modal__notification {
+  background-color: rgba(black, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  display: none;
+}
+
+.notification__wrapper {
+  margin: auto;
+  width: 280px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.notification__content {}
+
+.notification__text {
+  color: $form-text_color;
+  padding: 20px 20px;
+  font-family: ProximaNova;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.notification__footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  display: flex;
+}
+
+.btn_primary {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  margin: auto;
+  color: $btn-primary_color;
+  font-family: Panton;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  border: $btn-primary_border;
+  border-radius: 25px;
+  padding: 5px 15px;
+  transition: $hover;
+  &:hover {
+    color: $btn-primary_color-hover;
+    background-color: $btn-primary_background-color-hover;
+    transition: $hover;
+  }
+}

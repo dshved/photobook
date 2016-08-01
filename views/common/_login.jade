@@ -1,0 +1,57 @@
+extends ../layout
+
+block content
+	.main
+		.flip__container
+			.flip
+				.flip__front
+					header.header__start
+						.login__title
+							h1.title__h1 Добро пожаловать
+							p.title__p Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+					//- Login form
+					form.login__form(id="login__form")
+						.input__row
+							input.form__field(type="email" name="email" id="login_mail" placeholder="Электронная почта")
+							label.label__input(for="login_mail")
+								svg.svg__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox="0 0 15.844 25.859" )
+									use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-envelope")
+						.input__row
+							input.form__field(type="password" name="password" id="login__password" placeholder="Пароль")
+							label.label__input(for="login__password")
+								svg.svg__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox="0 0 15.844 25.859" )
+									use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-password")
+						.forget__link
+							a.form__link(href="/forget") Забыли пароль?
+						//- .form__error
+						//- 	span.error_text E-mail или пароль не верен
+						button.btn.btn__blue(type="submit" name="btn_login" id="login_btn")  Войти
+						.regestration
+							span.text__question Нет аккаунта? 
+							a.form__link(href="#" id="auth-btn") Зарегистрироваться
+				.flip__back
+					header.header__start
+						.registration__title
+							h1.title__h1 Регистрация
+					//- Registration form
+					form.registration__form(id="registration__form" )
+						.input__row
+							input.form__field(type="text" name="name" id="registration_name" placeholder="Имя")
+							label.label__input(for="registration_name")
+								svg.svg__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox="0 0 15.844 25.859" )
+									use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-name")
+						.input__row
+							input.form__field(type="email" name="email" id="registration_mail" placeholder="Электронная почта")
+							label.label__input(for="registration_mail")
+								svg.svg__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox="0 0 15.844 25.859" )
+									use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-envelope")
+						.input__row
+							input.form__field(type="password" name="password" id="registration_password" placeholder="Пароль")
+							label.label__input(for="registration_password")
+								svg.svg__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox="0 0 15.844 25.859" )
+									use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-password")
+						span.form__text Ваши данные остаются строго конфеденциальны
+						button.btn.btn__blue(type="submit" name="btn_create" id="reg_btn") Создать аккаунт
+						.registration__login
+							span.text__question Уже зарегистрированы? 
+							a.form__link(href="#" id="signin-btn") Войти

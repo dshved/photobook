@@ -1,0 +1,31 @@
+.modal__add-album
+	.add-album__wrapper
+		.add-album
+			.modal__header
+				.header__title
+					h2.modal__title Добавить альбом
+				button.btn_close(value="")
+					svg.svg__icon_close
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-close")
+			.modal__form
+				form.form__add-album(action="")
+					.form__row
+						label.label(for="album_name") Название
+						input.input(type="text" name="album_name" id="album_name")
+					.form__row
+						label.label(for="album_description") Описание
+						textarea.textarea(name="album_description" id="album_description")
+					.form__row
+						.modal__preview-container
+							.modal__preview_img
+								img.modal__img(src="/img/bg_main.jpg", alt="")
+						label.btn__upload Загрузить обложку
+							input.upload(type="file" accept="image/jpeg,image/png,image/jpg" name="upload_bg")
+						.comment
+							span.span__comment (файл должен быть размером не более <span class="img__size">1024</span> КБ)
+			.modal__footer
+				button.btn_modal(type="submit" form="popup__user_edit") Сохранить
+				button.btn_cancel Отменить
+				button.btn_delete Удалить
+					svg.svg__icon_delete
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-delete")

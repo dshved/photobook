@@ -1,0 +1,30 @@
+.forget__title {
+  margin-bottom: 30px;
+}
+
+.forget__form {
+  display: flex;
+  flex-flow: column;
+  width: 280px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.forget__form > .input__row {
+  border-top: 1px solid $border-color;
+  margin-bottom: 20px;
+}
+
+.forget__question {
+  padding: 20px 20px 9px;
+  color: #323232;
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+.login {
+  text-align: center;
+  padding: 13px 20px 16px;
+}

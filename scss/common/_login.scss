@@ -1,0 +1,185 @@
+.flip__container {
+  flex: 1;
+}
+
+.flip {
+  width: 550px;
+  height: 410px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.flip.flipping .flip__back {
+  transform: rotateY(0deg);
+}
+
+.flip.flipping .flip__front {
+  transform: rotateY(180deg);
+}
+
+.flip__front,
+.flip__back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.9s;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+}
+
+.flip__front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.flip__back {
+  transform: rotateY(-180deg);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 568px;
+}
+
+.login__title {
+  //display: none;
+}
+
+.title__p {
+  color: white;
+  text-align: center;
+  font-family: ProximaNova;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  // width: 63%
+  margin: auto;
+  padding: 10px 0 37px;
+}
+
+.login__form {
+  //display: none;
+  flex-flow: column;
+  min-width: 280px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  // display: none
+}
+
+.login__form > input[name="email"] {
+  border-radius: 25px 25px 0 0px;
+}
+
+.input__row {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: flex-end;
+  border-bottom: 1px solid $border-color;
+}
+
+.form__field {
+  border: none;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  width: 75%;
+  color: #323232;
+  &:focus {}
+  outline: none;
+}
+
+.label__input {
+  align-self: center;
+  margin-left: 20px;
+}
+
+.svg__icon {
+  height: auto;
+  width: 15px;
+  padding-top: 3px;
+  padding-right: 10px;
+  fill: $icon_color;
+  transition: $hover;
+}
+
+.form__field:focus + .label__input > .svg__icon {
+  fill: $icon_color_active;
+  transition: $hover;
+}
+
+.regestration {
+  padding-top: 13px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+}
+
+.forget__link {
+  padding-top: 13px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+}
+
+.form__error {
+  //display: none
+  opacity: 0.9;
+  background-color: #ffe0e0;
+  border-radius: 3px;
+  margin: 0 20px 20px;
+  padding: 7px 11px;
+}
+
+.error_text {
+  color: #323232;
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.text__question {
+  font-family: ProximaNova;
+  font-size: 14px;
+  line-height: 24px;
+  opacity: 0.8;
+  color: $form-text_color;
+  font-weight: 300;
+  padding: 5px;
+}
+
+.btn__blue {
+  display: block;
+  margin: auto;
+  width: 240px;
+  height: 40px;
+  background-color: $btn-blue_background-color;
+  border: $btn-blue_border;
+  border-radius: 25px;
+  color: $btn-blue_color;
+  font-family: Panton;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  cursor: pointer;
+  transition: $hover;
+  &:hover {
+    background-color: $btn-blue_background-color-hover;
+    transition: $hover;
+  }
+}
+
+.load {
+  display: flex !important;
+}
+
+.load-title {
+  display: block !important;
+}

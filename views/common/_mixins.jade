@@ -1,0 +1,22 @@
+//- Social icon 
+mixin social (className, items)
+	div(class="#{className}")
+		ul(class="#{className}__list")
+			each cont in items
+				li(class="#{className}__item")
+					a(href="#{cont[1]}" target="_blank" class="#{className}__link")
+						svg.svg__icon_social
+							use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-#{cont[0]}")
+						span.social-span= cont[2]
+
+
+//- comments
+mixin comments (src, name, comment)
+	li.comments__item
+		.comments
+			.comment__author-photo
+				.photo__frame
+					img.author-photo(src="#{src}", alt="author")
+			.comment
+				h2.author-name=name
+				p.comment-text=comment

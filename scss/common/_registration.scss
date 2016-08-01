@@ -1,0 +1,54 @@
+.registration__title {
+  //display: none
+}
+
+.title__h1 {
+  color: white;
+  // font-family: Panton
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px;
+}
+
+.registration__form {
+  //display: none
+  flex-flow: column;
+  width: 280px;
+  background-color: white;
+  border-radius: 20px;
+  //display: none
+}
+
+.registration__login {
+  padding-top: 13px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+}
+
+.form__text {
+  display: block;
+  padding: 10px 20px 16px 20px;
+  color: $form-text_color;
+  // font-family: ProximaNova
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.form__link {
+  padding: 10px 0px 16px;
+  color: $link_color;
+  // font-family: ProximaNova
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: $hover;
+  &:hover {
+    text-decoration: underline;
+    transition: $hover;
+  }
+}

@@ -1,0 +1,25 @@
+.modal__server-notification {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.server-notification__wrapper {
+  background-color: rgba(white, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  width: 480px;
+  height: 40px;
+  display: flex;
+}
+
+.server-notification__text {
+  color: $form-text_color;
+  font-family: ProximaNova;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 21px;
+  margin: auto;
+}

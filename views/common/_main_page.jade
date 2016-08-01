@@ -1,0 +1,50 @@
+extends ../main_layout.jade
+include _mixins
+block header
+
+	header.header__cover
+		.header__author-panel
+			.author__photo-container
+				.author__photo-frame
+					img.author__photo(src="/img/author.png", alt="")
+			.author__information-container
+				h1.author__name Антон Черепов
+				p.author__about Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+				+social('socials', [['soc_vk', 'https://vk.com', 'Вконтакте'], ['soc_fb', 'https://facebook.com', 'Facebook'], ['soc_twitter', 'https://twitter.com', 'twitter'], ['social_google', 'https://google.com', 'G+'], ['soc_email', '#', 'Mail']])
+			.author__controls
+				ul.control__list
+					li.control__item
+						a.control__link(href="#" id="edit")
+							svg.svg__icon_controls
+								use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-edit")
+					li.control__item
+						a.control__link(href="#")
+							svg.svg__icon_controls
+								use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-off")
+		.header__search-panel
+			form.form__search(action="")
+				input.search__form(type="search" id="search_form" name="search" placeholder="Исследовать мир" )
+				label.label__search(for="search_form")
+					svg.svg__icon_search
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-search")
+		.modal__window_popup.close
+
+block content
+	include _notification
+	include _add_album
+	include _edit_popup
+	include _server_notification
+	//- include _slider
+	include _photo-template
+	
+
+block footer
+	.footer__wrapper
+		.footer__left
+			p.text__left-side Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+		.footer__center
+			a.link__up-arrow(href="#")
+				svg.svg__icon_footer
+					use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-top")
+		.footer__right
+			p.text__right-side 2016 | Создано командой профессионалов на продвинутом курсепо веб-разработке от LoftSchool

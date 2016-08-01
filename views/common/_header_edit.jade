@@ -1,0 +1,37 @@
+.modal__header-edit
+	.header__cover
+		.header__author-panel.header__author-panel_edit
+			.author__photo-container
+				.author__photo-frame
+					.form__background
+						label.label__add-photo(for="add_avatar") Изменить <br> фото
+							svg.svg__icon_add-photo
+								use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-cam")
+						input.input__add-photo(type="file" id="add_avatar" name="")
+					.author__photo-wrapper
+						img.author__photo(src="/img/author.png", alt="")
+			.author__information-container
+				form.form__header-edit(action="" id="header_form_edit")
+					input.input__edit(type="text")
+					textarea.textarea__edit(name="")
+				.socials__wrapper
+					+social('socials', [['soc_vk', 'https://vk.com', 'Вконтакте'], ['soc_fb', 'https://facebook.com', 'Facebook'], ['soc_twitter', 'https://twitter.com', 'twitter'], ['social_google', 'https://google.com', 'G+'], ['soc_email', '#', 'Mail']])
+					.socilas-edit
+						form.form__socials-edit(action="" id="socials-edit")
+							input.input__medium(type="text" name="href_social")
+							button.btn_modal(type="submit" form="socials-edit") Сохранить
+							button.btn_cancel Отменить
+			.header__background-change
+				label.label__add-photo(for="add_background") Изменить <br> фон
+					svg.svg__icon_add-photo
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-cam")
+				input.input__add-photo(type="file" id="add_background")
+		.header__search-panel
+			.btn__background
+				button.btn_cancel(name="" type="submit" form="header_form_edit") Отменить
+				button.btn_modal(name="" type="submit" form="header_form_edit") Сохранить
+			form.form__search(action="")
+				input.search__form(type="search" id="search_form" name="search" placeholder="Исследовать мир" )
+				label.label__search(for="search_form")
+					svg.svg__icon_search
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-search")

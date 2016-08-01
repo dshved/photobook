@@ -1,0 +1,18 @@
+extends ../layout
+
+block title
+	.forget__title
+		h1.title__h1 Восстановление пароля
+block content
+	form.forget__form(id="forget__login")
+		span.forget__question Забыли пароль?
+		p.form__text Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по востановлению пароля
+		.input__row
+			input.form__field(type="email" name="email" id="forget_mail" placeholder="Электронная почта")
+			label.label__input(for="forget_mail")
+				svg.svg__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewBox="0 0 15.844 25.859" )
+					use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-envelope")
+		button.btn__blue.btn__forget(type="submit" name="btn_forget" id="forget_btn") Восстановить пароль
+		.login
+			span.text__question Вспомнили пароль?
+			a.form__link(href="/") Войти

@@ -1,0 +1,51 @@
+.modal__edit
+	.edit__wrapper
+		.edit__profile
+			.modal__header
+				.header__title
+					h2.modal__title Редактировать профиль
+				button.btn_close(value="")
+					svg.svg__icon_close
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-close")
+			.modal__form
+				form.form__edit_user(action="" id="popup__user_edit")
+					.form__user
+						.form__row
+							label.label(for="user_name") Имя
+							input.input(type="text" name="user_name" id="user_name")
+							input.input(type="text" name="user_surname" id="user_surname")
+						.form__row
+							label.label(for="user_about") О себе
+							textarea.textarea(name="user_about" id="user_about")
+						.form__row
+							.modal__preview-container
+								.modal__preview_img
+									img.modal__img(src="/img/author.png", alt="")
+							label.btn__upload Загрузить фотографию
+								input.upload(type="file" accept="image/jpeg,image/png,image/jpg" name="upload_ava")
+							.comment
+								span.span__comment (файл должен быть размером не более <span class="img__size">512</span> КБ)
+						.form__row
+							.modal__preview-container
+								.modal__preview_img
+									img.modal__img(src="/img/bg_main.jpg", alt="")
+							label.btn__upload Загрузить фон
+								input.upload(type="file" accept="image/jpeg,image/png,image/jpg" name="upload_bg")
+							.comment
+								span.span__comment (файл должен быть размером не более <span class="img__size">1024</span> КБ)
+					ul.form__socials_list
+						li.social__item
+							label.label(for="social__vk") Вконтакте
+							input.input.social__input(type="text" id="social__vk" name="social__vk")
+						li.social__item
+							label.label(for="social__fb") Facebook
+							input.input.social__input(type="text" id="social__fb" name="social__fb")
+						li.social__item
+							label.label(for="social__email") Email
+							input.input.social__input(type="text" id="social__email" name="social__email")
+						li.social__item
+							label.label(for="social__tw") Twitter
+							input.input.social__input(type="text" id="social__tw" name="social__tw")
+			.modal__footer
+				button.btn_modal(type="submit" form="popup__user_edit") Сохранить
+				button.btn_cancel Отменить
