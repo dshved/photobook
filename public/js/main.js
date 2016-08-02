@@ -1,4 +1,4 @@
-var $ =  require('jquery');
+// var $ =  require('jquery');
 
 var auth = require('./modules/auth.js');
 auth.init();

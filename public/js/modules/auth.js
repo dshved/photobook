@@ -1,5 +1,5 @@
 'use strict';
-var $ =  require('jquery');
+// var $ =  require('jquery');
 
 var init = function() {
   _setUpListners();
@@ -9,6 +9,7 @@ function _setUpListners() {
   $('#reg_btn').on('click', _setRegistration);
   $('#login_btn').on('click', _setLogin);
   $('#forget_btn').on('click', _setForget);
+  $('#logout').on('click', _setLogout);
 };
 
 var _errorMessage = function(element, message) {
@@ -140,10 +141,8 @@ var _setLogin = function(e) {
       .fail(function(data) {
         var statusCode = data.status;
         if (statusCode == 200) {
-
-          localStorage.setItem('token', data.responseText);
           form[0].reset();
-          window.location.href = '/';
+          window.location.href = '/main';
         } else if (statusCode > 200) {
           _errorMessage($this, data.responseText);
         }
@@ -213,6 +212,19 @@ var _setForget = function(e) {
     _errorMessage($this, result['message']);
   };
 
+};
+
+var _setLogout = function(e) {
+  e.preventDefault();
+  $.ajax({
+    url: '/logout',
+    type: 'GET',
+  })
+  .done(function(data) {
+    if (data == 'ok') {
+      window.location.href = '/';
+    }
+  });  
 };
 
 module.exports = {

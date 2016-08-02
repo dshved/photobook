@@ -16,9 +16,19 @@
     "handlebars": "^4.0.5",
     "jade": "~1.11.0",
     "jquery": "^3.1.0",
+    "jquery-form": "^3.50.0",
+    "jsonwebtoken": "^7.1.7",
     "mongoose": "^4.5.7",
     "morgan": "~1.7.0",
+    "multiparty": "^4.1.2",
     "node-sass-middleware": "0.8.0",
+    "nodemailer": "^2.5.0",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "rename": "^1.0.3"
   }
 }

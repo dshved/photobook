@@ -1,6 +1,6 @@
 'use strict';
 var Handlebars = require('handlebars');
-var $ =  require('jquery');
+// var $ =  require('jquery');
 
 function init() {
   _setUpListners();
@@ -20,22 +20,17 @@ function _setUpListners() {
 
 var subform = function(e) {
   e.preventDefault();
-  var form = $('#popup__user_edit'),
-    token = localStorage.getItem('token'),
-    data = form.serialize() + '&token=' + token;
+  var form = $('#popup__user_edit');
 
-  $.ajax({
-    url: '/profile',
-    type: 'POST',
-    data: data,
-  })
-  .done(function() {
-    console.log("success");
-  })
-  .fail(function() {
-    console.log("error");
-  })
-  $('.modal__window_popup').addClass('close').empty();
+ $(form).ajaxSubmit({
+    error: function(xhr) {
+      console.log(xhr);
+    },
+    success: function(response) {
+    console.log(response);
+    }
+  });
+   $('.modal__window_popup').addClass('close').empty();
 };
 
 

@@ -1,5 +1,5 @@
 'use strict';
-var $ =  require('jquery');
+// var $ =  require('jquery');
 
 function init() {
   _setUpListners();
@@ -14,6 +14,10 @@ var _formFlip = function(e) {
   e.preventDefault();
   var flip = $('.flip');
   flip.toggleClass('flipping');
+  var login_form = $('#login__form');
+  var reg_form = $('#registration__form');
+  login_form[0].reset();
+  reg_form[0].reset();
 };
 
 module.exports = {

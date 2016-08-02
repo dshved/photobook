@@ -1,0 +1,67 @@
+<div class="edit__profile">
+  <div class="modal__header">
+    <div class="header__title">
+      <h2 class="modal__title">Редактировать профиль</h2>
+    </div>
+    <button value="" class="btn_close" id="btn_close_modal">
+      <svg class="svg__icon_close">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sprites/svg/symbol/bg-sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="modal__form">
+    <form action="/profile" id="popup__user_edit" class="form__edit_user" method="post" enctype="multipart/form-data">
+      <div class="form__user">
+        <div class="form__row">
+          <label for="user_name" class="label">Имя</label>
+          <input type="text" name="user_name" id="user_name" value="{{user_name}}" class="input"/>
+          <input type="text" name="user_surname" id="user_surname" value="{{user_surname}}" class="input"/>
+        </div>
+        <div class="form__row">
+          <label for="user_about" class="label">О себе</label>
+          <textarea name="user_about" id="user_about" class="textarea">{{user_about}}</textarea>
+        </div>
+        <div class="form__row">
+          <div class="modal__preview-container">
+            <div class="modal__preview_img"><img src="/img/author.png" alt="" class="modal__img modal__img-author"/></div>
+          </div>
+          <label class="btn__upload">Загрузить фотографию
+            <input id="upload_ava" type="file" accept="image/jpeg,image/png,image/jpg" name="upload_ava" class="upload"/>
+          </label>
+          <div class="comment"><span class="span__comment">(файл должен быть размером не более <span class="img__size">512</span> КБ)</span></div>
+        </div>
+        <div class="form__row">
+          <div class="modal__preview-container">
+            <div class="modal__preview_img"><img src="/img/bg_main.jpg" alt="" class="modal__img modal__img-bg"/></div>
+          </div>
+          <label class="btn__upload">Загрузить фон
+            <input id="upload_bg" type="file" accept="image/jpeg,image/png,image/jpg" name="upload_bg" class="upload"/>
+          </label>
+          <div class="comment"><span class="span__comment">(файл должен быть размером не более <span class="img__size">1024</span> КБ)</span></div>
+        </div>
+      </div>
+      <ul class="form__socials_list">
+        <li class="social__item">
+          <label for="social__vk" class="label">Вконтакте</label>
+          <input type="text" id="social__vk" name="social__vk" class="input social__input"/>
+        </li>
+        <li class="social__item">
+          <label for="social__fb" class="label">Facebook</label>
+          <input type="text" id="social__fb" name="social__fb" class="input social__input"/>
+        </li>
+        <li class="social__item">
+          <label for="social__email" class="label">Email</label>
+          <input type="text" id="social__email" name="social__email" class="input social__input"/>
+        </li>
+        <li class="social__item">
+          <label for="social__tw" class="label">Twitter</label>
+          <input type="text" id="social__tw" name="social__tw" class="input social__input"/>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="modal__footer">
+    <button type="submit" form="popup__user_edit" class="btn_modal">Сохранить</button>
+    <button class="btn_cancel" id="btn_cancel_modal">Отменить</button>
+  </div>
+</div>

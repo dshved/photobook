@@ -13,7 +13,10 @@ mongoose.connect('mongodb://localhost/photobook');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var forgot = require('./routes/forgot');
+var registration = require('./routes/registration');
+var auth = require('./routes/auth');
+var profile = require('./routes/profile');
 
 var app = express();
 
@@ -44,11 +47,11 @@ app.use(require('node-sass-middleware')({
   prefix: '/css'
 }));
 
-browserify.settings.development('basedir', __dirname);
+// browserify.settings.development('basedir', __dirname);
 
-app.use('/js', browserify(__dirname + '/public/js/modules'));
-app.get('/js/app.js', browserify(__dirname + '/public/js/main.js'));
-app.get('/js/app.js', browserify(['hyperquest', 'concat-stream']));
+// app.use('/js', browserify(__dirname + '/public/js/modules'));
+// app.get('/js/app.js', browserify(__dirname + '/public/js/main.js'));
+// app.get('/js/app.js', browserify(['hyperquest', 'concat-stream']));
 // app.get('/js/app.js', browserify(['hyperquest', 'concat-stream', {__dirname + '/public/js/main.js': {run: true}}]));
 
 
@@ -57,7 +60,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
+app.use('/forget', forgot);
+app.use('/registration', registration);
+app.use('/auth', auth);
+app.use('/profile', profile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

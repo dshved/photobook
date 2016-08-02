@@ -1,19 +1,15 @@
 var express = require('express'),
-  nodemailer = require('nodemailer'),
-  smtpTransport = require('nodemailer-smtp-transport'),
   router = express.Router(),
-  mongoose = require('mongoose'),
-  User = mongoose.model('User');
+  nodemailer = require('nodemailer'),
+  smtpTransport = require('nodemailer-smtp-transport');
 
-module.exports = function (app) {
-  app.use('/', router);
-};
+var User = require('../models/user').User;
 
-router.get('/forget', function (req, res, next) {
+router.get('/', function (req, res, next) {
     res.render('common/_forget');
 });
 
-router.post('/forget', function (req, res, next) {
+router.post('/', function (req, res, next) {
   var email = req.body.email;
 
   if (email) {
@@ -66,3 +62,5 @@ router.post('/forget', function (req, res, next) {
     })
   } 
 });
+
+module.exports = router;
