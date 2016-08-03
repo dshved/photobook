@@ -458,22 +458,21 @@ icon-top-dims {
   text-align: right; }
 
 .wrapper__main {
-  height: 100%;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-flow: column; }
 
 .header__main {
-  position: relative;
-  flex: 0 0 auto; }
+  position: relative; }
 
 .section__content {
-  flex: 1 0 auto;
+  flex: 1;
   display: flex;
+  flex-direction: column;
   width: 100%; }
 
 .footer__main {
-  flex: 0 0 auto;
   background: url("/img/bg_main.jpg");
   background-repeat: no-repeat;
   background-position: center calc(50% - 500px);
@@ -557,18 +556,21 @@ icon-top-dims {
   margin: 0; }
 
 .control__item {
-  display: flex;
-  width: 42px;
   height: 42px;
-  border-radius: 50%;
+  border-radius: 42px;
   overflow: hidden;
-  background-color: white;
   margin-bottom: 10px; }
 
 .control__link {
   margin: auto;
   padding: 10px;
-  display: block; }
+  display: flex;
+  align-items: center;
+  background-color: white; }
+  .control__link:hover {
+    background-color: #28bbf0; }
+  .control__link:hover .svg__icon_controls {
+    fill: white; }
 
 .svg__icon_controls {
   width: 22px;
@@ -1176,7 +1178,9 @@ icon-top-dims {
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
+  display: flex; }
+
+.modal__add-album.close {
   display: none; }
 
 .add-album__wrapper {
@@ -1573,4 +1577,77 @@ icon-top-dims {
 .comment {
   flex: 1 2 80%; }
 
-/*# sourceMappingURL=app.css.map */
+.title {
+  color: #323232;
+  font-family: "Panton";
+  font-size: 42px; }
+
+.photos {
+  display: flex;
+  flex-wrap: wrap; }
+
+.albums {
+  margin: 0 auto;
+  margin-bottom: 30px; }
+  .albums_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px; }
+  .albums_list {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .albums_item {
+    width: 270px;
+    height: 330px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    background-clip: padding-box;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+  .albums_img {
+    position: relative;
+    height: 280px;
+    overflow: hidden; }
+    .albums_img img {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-height: 100%;
+      min-height: 280px; }
+  .albums_edit {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; }
+    .albums_edit svg {
+      margin-right: 15px; }
+  .albums_desc {
+    text-align: right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; }
+
+.header_add-albums {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  border-radius: 20px;
+  background-clip: padding-box;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  justify-content: center;
+  align-items: center; }
+  .header_add-albums:hover {
+    background-color: #28bbf0; }
+  .header_add-albums:hover svg {
+    fill: white; }

@@ -1,0 +1,52 @@
+{
+	"photo" : [
+		{
+			"url" : "http://placehold.it/1350x650",
+			"avatar" : "http://placehold.it/380x250",
+			"photoText" : "путешествие на лодке по озеру",
+			"comments" : 3,
+			"like" : 25,
+			"photoName" : "Прогулки по воде"
+		},
+		{
+			"url" : "http://placehold.it/380x250",
+			"avatar" : "http://placehold.it/380x250",
+			"photoText" : "путешествие на лодке по озеру",
+			"comments" : 6,
+			"like" : 5,
+			"photoName" : "Прогулки по воде"
+		},
+		{
+			"url" : "http://placehold.it/380x250",
+			"avatar" : "http://placehold.it/50x50",
+			"photoText" : "путешествие на лодке по озеру",
+			"comments" : 79,
+			"like" : 115,
+			"photoName" : "Прогулки по воде"
+		},
+		{
+			"url" : "http://placehold.it/1350x650",
+			"avatar" : "http://placehold.it/380x250",
+			"photoText" : "путешествие на лодке по озеру",
+			"comments" : 3,
+			"like" : 25,
+			"photoName" : "Прогулки по воде"
+		},
+		{
+			"url" : "http://placehold.it/380x250",
+			"avatar" : "http://placehold.it/380x250",
+			"photoText" : "путешествие на лодке по озеру",
+			"comments" : 6,
+			"like" : 5,
+			"photoName" : "Прогулки по воде"
+		},
+		{
+			"url" : "http://placehold.it/380x250",
+			"avatar" : "http://placehold.it/50x50",
+			"photoText" : "путешествие на лодке по озеру",
+			"comments" : 79,
+			"like" : 115,
+			"photoName" : "Прогулки по воде"
+		}
+	]
+}

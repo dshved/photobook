@@ -1,7 +1,6 @@
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+var mongoose = require('mongoose');
 
-var albumSchema = new Schema({
+var albumSchema = new mongoose.Schema({
   owner: {
     type: String,
     required: true
@@ -19,6 +18,8 @@ var albumSchema = new Schema({
     required: true
   },
 });
+var Album = mongoose.model('Album', albumSchema);
 
-mongoose.model('Album', albumSchema);
-
+module.exports = {
+  Album: Album
+};

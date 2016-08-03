@@ -98,19 +98,26 @@
 }
 
 .control__item {
-  display: flex;
-  width: 42px;
+  //display: flex;
+  // width: 42px;
   height: 42px;
-  border-radius: 50%;
+  border-radius: 42px;
   overflow: hidden;
-  background-color: white;
   margin-bottom: 10px;
 }
 
 .control__link {
   margin: auto;
   padding: 10px;
-  display: block;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  &:hover{
+    background-color: $btn-blue_background-color;
+  }
+  &:hover .svg__icon_controls {
+    fill: white;
+  }
 }
 
 .svg__icon_controls {

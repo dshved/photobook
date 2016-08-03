@@ -36,7 +36,7 @@ router.post('/', function (req, res, next) {
         console.log('Пользователь добавлен в базу данных');
         console.log(newUser);
         res.status(200);
-        res.write('Успешная регистрация');
+        // res.write('Успешная регистрация');
         res.end();
       })
     } else {

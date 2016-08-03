@@ -33,7 +33,8 @@ router.post('/', function (req, res, next) {
         res.end();
       } else {
         req.session.user_id = user._id;
-        res.send();
+        res.status(200);
+        res.send('ok');
         res.end();
       }
     })

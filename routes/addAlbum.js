@@ -1,59 +1,53 @@
 var express = require('express'),
+  util = require('util'),
   multiparty = require('multiparty'),
-  jwt = require('jsonwebtoken'),
-  router = express.Router(),
-  mongoose = require('mongoose'),
-  Album = mongoose.model('Album'),
-  Photo = mongoose.model('Photo');
+  fs = require('fs'),
+  router = express.Router();
 
-module.exports = function (app) {
-  app.use('/', router);
-};
+var Album = require('../models/album').Album;
+var Photo = require('../models/photo').Photo;
 
-router.post('/addAlbum', function(req, res, next) {
 
-  var token = req.body.token || req.query.token || req.headers['x-access-token'];
-   
-  if (token) {
-    jwt.verify(token, 'abcdef', function(err, decoded) {
-        
-      if (err) {
-        return next(err);    
-      } else {
+router.post('/', function(req, res, next) {
+  var description,
+    title,
+    filePath,
+    user_id = req.session.user_id;
 
-        var description,
-          title,
-          filePath,
-          email = decoded._doc.email
+  var form = new multiparty.Form();
 
-        var form = new multiparty.Form();
+  form.parse(req, function(err, fields, files) {
 
-        form.parse(req, function(err, fields, files) {
+    description = fields.album_description[0];
+    title = fields.album_name[0];
+    filePath = files.upload_bg[0].path;
 
-          description = fields.description[0];
-          title = fields.title[0];
-          filePath = files.photo[0].path;
-
-        });
-        
-        Album.find({}, function (err, albums) {
+    fs.readFile(filePath, function(err, data) {
+      var radom = Math.random().toString(36);
+      var randomName = radom.substring(2, radom.length);
+      var path = './public/upload/' + randomName + '-' + files.upload_bg[0].originalFilename;
+      fs.writeFile(path, data, function(err) {
+        Album.find({}, function(err, albums) {
           if (err) return next(err);
 
           var newAlbum = new Album({
-            owner: email,
+            owner: user_id,
             title: title,
             description: description,
-            cover: filePath
+            cover: path
           });
-          newAlbum.save(function(err) {
-            if (err) {
-              console.log(err);
-            } 
-          });
+          newAlbum.save();
+          res.redirect('/main');
           res.end();
         });
-      };
-    });   
-  }
-}) 
+      });
 
+    });
+
+
+
+
+  });
+});
+
+module.exports = router;

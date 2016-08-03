@@ -1,7 +1,6 @@
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+var mongoose = require('mongoose');
 
-var photoSchema = new Schema({
+var photoSchema = new mongoose.Schema({
   album: {
   	type: String,
   	required: true
@@ -29,7 +28,8 @@ var photoSchema = new Schema({
   } 
 });
 
+var Photo = mongoose.model('Photo', photoSchema);
 
-
-mongoose.model('Photo', photoSchema);
-
+module.exports = {
+  Photo: Photo
+};

@@ -1,0 +1,50 @@
+<div class="add-album__wrapper">
+  <div class="add-album">
+    <div class="modal__header">
+      <div class="header__title">
+        <h2 class="modal__title">Добавить альбом</h2>
+      </div>
+      <button value="" class="btn_close" id="btn_close_modal">
+        <svg class="svg__icon_close">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sprites/svg/symbol/bg-sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="modal__form">
+      <form action="/addalbum" id="popup__add_album" class="form__add-album" method="post" enctype="multipart/form-data">
+        <div class="form__row">
+          <label for="album_name" class="label">Название</label>
+          <input type="text" name="album_name" id="album_name" class="input">
+        </div>
+        <div class="form__row">
+          <label for="album_description" class="label">Описание</label>
+          <textarea name="album_description" id="album_description" class="textarea"></textarea>
+        </div>
+        <div class="form__row">
+          <div class="modal__preview-container">
+            <div class="modal__preview_img">
+              <img src="/img/bg_main.jpg" alt="" class="modal__img modal__img-bg">
+            </div>
+          </div>
+          <label class="btn__upload">Загрузить обложку
+            <input id="upload_bg" type="file" accept="image/jpeg,image/png,image/jpg" name="upload_bg" class="upload">
+          </label>
+          <div class="comment">
+            <span class="span__comment">(файл должен быть размером не более 
+              <span class="img__size">1024</span> КБ)
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal__footer">
+      <button type="submit" id="btn_submit" form="popup__add_album" class="btn_modal">Сохранить</button>
+      <button class="btn_cancel" id="btn_cancel_modal">Отменить</button>
+      <button class="btn_delete">Удалить
+        <svg class="svg__icon_delete">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sprites/svg/symbol/bg-sprite.svg#icon-delete"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

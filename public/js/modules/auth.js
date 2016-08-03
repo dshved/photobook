@@ -1,6 +1,5 @@
 'use strict';
 // var $ =  require('jquery');
-
 var init = function() {
   _setUpListners();
 };
@@ -139,6 +138,7 @@ var _setLogin = function(e) {
         data: data
       })
       .fail(function(data) {
+        console.log(data);
         var statusCode = data.status;
         if (statusCode == 200) {
           form[0].reset();

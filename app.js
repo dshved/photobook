@@ -17,6 +17,8 @@ var forgot = require('./routes/forgot');
 var registration = require('./routes/registration');
 var auth = require('./routes/auth');
 var profile = require('./routes/profile');
+var addalbum = require('./routes/addalbum');
+
 
 var app = express();
 
@@ -38,14 +40,14 @@ app.use(session({
   store: new MongoStore({ url: 'mongodb://localhost/photobook' })
 }));
 
-app.use(require('node-sass-middleware')({
-  src: __dirname + '/scss',
-  dest: __dirname + '/public/css',
-  indentedSyntax: false,
-  debug: true,
-  sourceMap: true,
-  prefix: '/css'
-}));
+// app.use(require('node-sass-middleware')({
+//   src: __dirname + '/scss',
+//   dest: __dirname + '/public/css',
+//   indentedSyntax: false,
+//   debug: true,
+//   sourceMap: true,
+//   prefix: '/css'
+// }));
 
 // browserify.settings.development('basedir', __dirname);
 
@@ -64,6 +66,7 @@ app.use('/forget', forgot);
 app.use('/registration', registration);
 app.use('/auth', auth);
 app.use('/profile', profile);
+app.use('/addalbum', addalbum);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

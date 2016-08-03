@@ -10,7 +10,29 @@ block content
 	//- include _edit_popup
 	//- include _server_notification
 	//- //- include _slider
-	//- include _photo-template
+	include _photo-template
+
+	-var name_photos = ['Путешествие на лодке по озеру','Отдых в палатке','Любимые лошадки','Мечтательный взгляд вдаль пове...']
+	section.albums
+		.albums_header
+			.title Мои альбомы
+			a(href="#").header_add-albums#add_album
+				svg.svg__icon_controls
+					use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-add")
+		ul.albums_list
+			if name_photos
+				each name in name_photos
+					li.albums_item
+						.albums_img
+							img(src="/img/photo1.jpg", alt="")
+						.albums_edit
+							a(href="#")
+								svg.svg__icon_controls
+									use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-edit")
+							.albums_desc= name
+			else 
+				.title ничего нет
+		.modal__add-album.close
 
 block footer
 	.footer__wrapper
