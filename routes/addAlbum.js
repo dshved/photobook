@@ -34,9 +34,17 @@ router.post('/', function(req, res, next) {
             owner: user_id,
             title: title,
             description: description,
-            cover: path
+            cover: '/upload/' + randomName + '-' + files.upload_bg[0].originalFilename
           });
-          newAlbum.save();
+
+          newAlbum.save(function(err, album) {
+            var newPhoto = new Photo({
+              album: album.id,
+              file: '/upload/' + randomName + '-' + files.upload_bg[0].originalFilename
+            });
+            newPhoto.save();
+          });
+
           res.redirect('/main');
           res.end();
         });

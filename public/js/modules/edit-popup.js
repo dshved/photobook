@@ -65,7 +65,8 @@ var _showModal = function(e) {
   deff.then(function(template) {
     $('.modal__window_popup').html(template({
       user_name: $('.author__name').text(),
-      user_about: $('.author__about').text()
+      user_about: $('.author__about').text(),
+      user_ava: $('.author__photo').attr('src')
     }));
   });
 };

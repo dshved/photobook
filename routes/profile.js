@@ -44,10 +44,10 @@ router.post('/', function(req, res, next) {
               user.description = description;
               user.avatar = '/upload/' + randomName + '-' + ava[0].originalFilename;
               user.save();
-              fs.unlink('./public/' + old_ava, function(err) {
-                if (err) throw err;
-                console.log("file deleted");
-              });
+              // fs.unlink('./public/' + old_ava, function(err) {
+              //   if (err) throw err;
+              //   console.log("file deleted");
+              // });
             });
 
           });
@@ -63,7 +63,7 @@ router.post('/', function(req, res, next) {
         res.end();
 
       }
-
+      // res.redirect('/main');
       res.send();
       res.end();
 

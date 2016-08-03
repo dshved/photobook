@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   width: 100%;
   margin: auto;
-  max-width: 90%;
+  max-width: 95%;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -70,4 +70,7 @@
   padding: 3% 5%;
   background: #f6f6f6;
   text-align: right;
+}
+.photo__comment-wrapper {
+  display: flex;
 }

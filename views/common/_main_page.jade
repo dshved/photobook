@@ -2,45 +2,66 @@ extends ../main_layout.jade
 include _mixins
 
 block header
-	include _header
-
+  include _header
 block content
-	//- include _notification
-	//- include _add_album
-	//- include _edit_popup
-	//- include _server_notification
-	//- //- include _slider
-	include _photo-template
-
-	-var name_photos = ['Путешествие на лодке по озеру','Отдых в палатке','Любимые лошадки','Мечтательный взгляд вдаль пове...']
-	section.albums
-		.albums_header
-			.title Мои альбомы
-			a(href="#").header_add-albums#add_album
-				svg.svg__icon_controls
-					use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-add")
-		ul.albums_list
-			if name_photos
-				each name in name_photos
-					li.albums_item
-						.albums_img
-							img(src="/img/photo1.jpg", alt="")
-						.albums_edit
-							a(href="#")
-								svg.svg__icon_controls
-									use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-edit")
-							.albums_desc= name
-			else 
-				.title ничего нет
-		.modal__add-album.close
+  
+  section.photos
+    .albums_header
+      .title Новое в мире
+    .photo-list
+      if photos
+        each photo in photos
+          section.photo__block
+            .photo__header
+              a.photo__link.photo__link-big(href="#")
+                img.photo__image(src= photo.file alt="new image")
+            .photo__main
+              .photo__avatar-wrapper
+                img.photo__avatar(src="/img/author.png" alt="user avatar")
+              .photo__content
+                span.photo__content-text Название фото
+                .photo__comment-wrapper 
+                  span.photo__content-inner.photo__content-comments 3
+                  span.photo__content-inner.photo__content-like 45
+            .photo__footer
+              span.photo__name-album Название альбома
+      else
+        .h2 Фотографий пока нет
+  //- include _notification
+  //- include _add_album
+  //- include _edit_popup
+  //- include _server_notification
+  //- include _slider
+  //- include _photo-template
+  
+  section.albums
+    .albums_header
+      .title Мои альбомы
+      a(href="#").header_add-albums#add_album
+        svg.svg__icon_controls
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-add")
+    ul.albums_list
+      if albums
+        each photo in albums
+          li.albums_item
+            .albums_img
+              img(src= photo.cover, alt=photo.description)
+            .albums_edit
+              a(href="#")
+                svg.svg__icon_controls
+                  use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-edit")
+              .albums_desc= photo.title
+      else 
+        .h2 У Вас пока нет альбомов
+    .modal__add-album.close
 
 block footer
-	.footer__wrapper
-		.footer__left
-			p.text__left-side Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
-		.footer__center
-			a.link__up-arrow(href="#")
-				svg.svg__icon_footer
-					use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-top")
-		.footer__right
-			p.text__right-side 2016 | Создано командой профессионалов на продвинутом курсепо веб-разработке от LoftSchool
+  .footer__wrapper
+    .footer__left
+      p.text__left-side Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+    .footer__center
+      a.link__up-arrow(href="#")
+        svg.svg__icon_footer
+          use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-top")
+    .footer__right
+      p.text__right-side 2016 | Создано командой профессионалов на продвинутом курсепо веб-разработке от LoftSchool

@@ -402,7 +402,7 @@ icon-top-dims {
   flex-wrap: wrap;
   width: 100%;
   margin: auto;
-  max-width: 90%;
+  max-width: 95%;
   padding-top: 20px;
   padding-bottom: 20px; }
 
@@ -456,6 +456,9 @@ icon-top-dims {
   padding: 3% 5%;
   background: #f6f6f6;
   text-align: right; }
+
+.photo__comment-wrapper {
+  display: flex; }
 
 .wrapper__main {
   min-height: 100vh;
@@ -1584,9 +1587,17 @@ icon-top-dims {
 
 .photos {
   display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto; }
+
+.photo-list {
+  display: flex;
   flex-wrap: wrap; }
 
 .albums {
+  max-width: 95%;
+  width: 95%;
   margin: 0 auto;
   margin-bottom: 30px; }
   .albums_header {
